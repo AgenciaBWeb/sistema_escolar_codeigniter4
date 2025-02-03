@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use App\Entities\Address;
-use CodeIgniter\Model;
+use App\Models\Basic\AppModel;
 
-class AddressModel extends Model
+class AddressModel extends AppModel
 {
     protected $table            = 'addresses';
     protected $primaryKey       = 'id';
