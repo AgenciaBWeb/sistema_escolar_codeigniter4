@@ -20,6 +20,19 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?php echo base_url(''); ?>assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 
+  <style>
+    html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
+  </style>
+
   <?php echo $this->renderSection('styles'); ?>
 </head>
 
@@ -36,7 +49,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="<?php echo base_url(''); ?>pages/dashboard.html">
+          <a class="nav-link <?php echo url_is(route_to('home')) ? 'active' : ''; ?>" href="<?php echo route_to('home'); ?>">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -56,7 +69,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?php echo base_url(''); ?>pages/tables.html">
+          <a class="nav-link  <?php echo url_is(route_to('parents')) ? 'active': ''; ?>" href="<?php echo route_to('parents'); ?>">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -72,7 +85,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Responsáveis</span>
           </a>
         </li>
         <li class="nav-item">
@@ -342,7 +355,6 @@
     <div class="container-fluid py-4">
 
     <?php echo $this->renderSection('content'); ?>
-
       
       <footer class="footer pt-3  ">
         <div class="container-fluid">
