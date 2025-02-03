@@ -38,6 +38,12 @@ abstract class BaseController extends Controller
     protected $helpers = [];
 
     /**
+     * Dados que serão enviados para as views
+     *
+     */
+    protected $dataToView = [];
+
+    /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
@@ -51,8 +57,6 @@ abstract class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
-
-        // E.g.: $this->session = service('session');
+        $this->dataToView['title'] = 'Escola';
     }
 }

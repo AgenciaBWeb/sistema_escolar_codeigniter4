@@ -8,6 +8,6 @@ class HomeController extends BaseController
 
     public function index(): string
     {
-        return view(self::VIEWS_DIRECTORY . 'index');
+        return view(self::VIEWS_DIRECTORY . 'index', $this->dataToView);
     }
 }
